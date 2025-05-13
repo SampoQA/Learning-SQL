@@ -1,0 +1,26 @@
+CREATE TABLE Department -- создать таблицу
+(
+  DepartmentID INTEGER PRIMARY KEY, -- целое уникальное число
+  Specialization VARCHAR(255) NOT NULL, -- строка, не ноль
+  Num_User INTEGER NOT NULL -- целое число, не ноль
+  );
+
+INSERT INTO Department -- добавить в таблицу департамент 
+  (Specialization, Num_User) -- столбики, в которые добавляется информация
+VALUES -- значения
+  ('Testing', 5), -- по строчное значение для добавление в таблицу 
+  ('Develop', 5), -- по строчное значение для добавление в таблицу 
+  ('Sale', 5), -- по строчное значение для добавление в таблицу 
+  ('PM', 5), -- по строчное значение для добавление в таблицу 
+  ('Boris', 5); -- по строчное значение для добавление в таблицу 
+
+CREATE TABLE ProgressTest
+(
+  ProgressID INTEGER PRIMARY KEY,       -- Уникальный ID записи прогресса целое число, уникальное 
+  UserID INTEGER NOT NULL,             -- ID пользователя целое число не ноль
+  DepartmentID INTEGER NOT NULL,       -- ID отдела целое число не ноль
+  num INTEGER NOT NULL,                -- Числовой показатель прогресса (версия теста, шаг, количество попыток)
+
+  FOREIGN KEY (UserID) REFERENCES User (UserID),  -- Внешний ключ относиться (UserID)к (UserID)
+  FOREIGN KEY (DepartmentID) REFERENCES Department (DepartmentID) -- -- Внешний ключ относиться (DepartmentID) к (DepartmentID)
+);
