@@ -12,3 +12,20 @@ SELECT *
 FROM users 
 WHERE Date_birth >= '1996-01-01' -- Valitse rivi, jonka sarakkeen arvo on yhtä suuri tai suurempi kuin
 ;
+
+
+SELECT Language, -- выбрать столбик язык
+COUNT(*) -- посчитать 
+AS 'Количество пользователей по языку' -- подписать столбец с посчитанным
+FROM Roskvartal -- из таблицы
+GROUP BY Language -- сгруппировать по языку 
+;
+
+SELECT
+  UserID, -- столбец
+  SUM(num) -- сумма по столбцу num
+  AS 'Общий  счёт' -- переменновать столбец с подсчитанной суммой 
+FROM ProgressTest  -- из какой таблицы
+GROUP BY UserID -- сгруппировать по юзер айди 
+ORDER BY UserID DESC -- отсортировать в порядке убывания
+; 
