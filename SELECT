@@ -1,0 +1,14 @@
+SELECT count (*) -- выбрать посчитанное количество строк
+As 'количество пользователей' -- показать под "шапкой" 'количество пользователей'
+FROM users -- из какой таблицы
+;
+
+SELECT * -- valitse
+FROM users -- mistä pöydästä
+WHERE First_name = 'Ivan' -- Valitse rivi, jonka sarakkeen arvo on yhtä suuri kuin Ivan
+;
+
+SELECT *
+FROM users 
+WHERE Date_birth >= '1996-01-01' -- Valitse rivi, jonka sarakkeen arvo on yhtä suuri tai suurempi kuin
+;
