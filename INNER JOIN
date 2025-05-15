@@ -1,0 +1,10 @@
+SELECT 
+  Users.First_name,    -- выбрать таблицу и столбец
+  Users.Last_name, -- выбрать таблицу и столбец
+  ProgressTest.num AS Score, -- выбрать таблицу и столбец, присвоив имя столбцу AS
+  Department.Specialization -- выбрать таблицу и столбец
+FROM ProgressTest -- Основная таблица (прогресс)
+INNER JOIN Users -- Соединяем с таблицей пользователей
+  ON ProgressTest.UserID = Users.UserID -- Условие связи по UserID, связь один ко одному
+INNER JOIN Department -- Соединяем с таблицей отделов
+  ON ProgressTest.DepartmentID = Department.DepartmentID; -- Условие связи по DepartmentID связь один ко одному
